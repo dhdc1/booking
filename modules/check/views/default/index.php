@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
     
     input{
         height: 50px;
-        width: 250px
+        width: 250px;       
     }
     button {
         height: 50px;
