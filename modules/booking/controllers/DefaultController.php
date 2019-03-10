@@ -40,7 +40,7 @@ class DefaultController extends Controller {
                 $sql = "select count(reserv_cid) from ovst_queue_server_reserv where reserv_cid = '$cid' and reserv_date >= CURDATE() ";
                 $row = \Yii::$app->db->createCommand($sql)->queryScalar();
                 if ($row * 1 > 0) {
-                    throw new \yii\web\ForbiddenHttpException('ท่านเคยจองคิวไว้แล้ว และยังไม่ได้เข้ารับบริการตามคิวที่จองไว้');
+                    throw new \yii\web\ForbiddenHttpException("ท่านเคยจองคิวไว้แล้ว และยังไม่ได้เข้ารับบริการตามคิวที่จองไว้ หากต้องการเปลี่ยนแปลงหรือยกเลิกการจอง \r\nกรุณาติดต่อ  ".\Yii::$app->params['tel_cancel']);
                     return;
                 }
 
