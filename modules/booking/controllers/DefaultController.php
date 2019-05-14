@@ -27,13 +27,14 @@ class DefaultController extends Controller {
 
 
 
-            $birthday = \Yii::$app->request->post('birthday');
+            $byear = \Yii::$app->request->post('byear');
+            $byear = (int)$byear-543;
             $slot_id = \Yii::$app->request->post('slot_id');
             if (empty($slot_id)) {
                 throw new \yii\web\ForbiddenHttpException('กรุณาเลือกเวลาจอง');
                 return;
             }
-            $sql = " select count(cid) from patient where cid = '$cid' and birthday = '$birthday' ";
+            $sql = " select count(cid) from patient where cid = '$cid' and YEAR(birthday)  = '$byear' ";
             $count = \Yii::$app->db->createCommand($sql)->queryScalar();
             if ($count > 0) {
 

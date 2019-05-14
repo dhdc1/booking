@@ -7,12 +7,12 @@ use app\components\MyHelper;
 ?>
 
 <style>
-    
+
     input[type='radio'] { transform: scale(2); cursor: pointer;}
     th{
         text-align: center
     }
-    
+
 </style>
 <div class="alert alert-danger">
     <span style="font-size: 22px">ขั้นตอนที่ 2/3 [เลือกเวลา]</span>
@@ -27,7 +27,7 @@ use app\components\MyHelper;
     ActiveForm::begin([
         'id' => 'search',
         'method' => 'get',
-        'action' => Url::to(['bookingtime','depcode'=>$depcode]),
+        'action' => Url::to(['bookingtime', 'depcode' => $depcode]),
     ]);
     ?>
     เลือกวันที่ 
@@ -72,7 +72,7 @@ use app\components\MyHelper;
 
         <?php echo Html::hiddenInput('depcode', $depcode) ?>
         <p>เลข 13 หลัก <input name="cid" autocomplete="off" maxlength="13" /></p> 
-        <p>วดป.เกิด <input name="birthday" type="date" max="<?= date('Y-m-d', strtotime("-30 day")) ?>" autocomplete="off"/></p>
+        <p>ปี พ.ศ.เกิด <input name="byear" type="number"  autocomplete="off"/></p>
         <p><button class="btn btn-lg btn-success">ทำการจอง</button></p>
 
     </div>

@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 
-$sql = " SELECT  t.online_dep depcode,k.booking_tname depname,k.booking_ename ename from ovst_queue_server_online t 
+$sql = " SELECT  t.online_dep depcode,k.booking_tname depname,k.booking_ename ename,k.booking_detail detail from ovst_queue_server_online t 
 LEFT JOIN kskdepartment k ON k.depcode = t.online_dep
 WHERE t.online_active = 'y'   and t.online_date > CURDATE() GROUP BY t.online_dep  ";
 
@@ -28,8 +28,9 @@ $raw = \Yii::$app->db->createCommand($sql)->queryAll();
     <?php foreach ($raw as $row): ?>
         <div class="box-x col-md-2" style="  background-color: #db4865;">
             <a href="<?= Url::to(['bookingtime', 'depcode' => $row['depcode']]) ?>" >
-                <span style="font-size: 28px;color: white"><?= $row['depname'] ?></span><br>
-                 <span style="font-size: 28px;color: white"><?= $row['ename'] ?></span><br>
+                <span style="font-size: 26px;color: white"><?= $row['depname'] ?></span><br>
+                <span style="font-size: 22px;color: white"><?= $row['ename'] ?></span><br>
+                <span style="font-size: 18px;color: white"><?= $row['detail'] ?></span><br>
             </a>
         </div>
 
