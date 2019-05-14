@@ -15,7 +15,7 @@ use app\components\MyHelper;
     
 </style>
 <div class="alert alert-danger">
-    <span style="font-size: 32px">ขั้นตอนที่ 2/3 [เลือกเวลา]</span>
+    <span style="font-size: 22px">ขั้นตอนที่ 2/3 [เลือกเวลา]</span>
 </div>
 
 <div style="margin-bottom: 15px">
@@ -71,9 +71,9 @@ use app\components\MyHelper;
     <div >
 
         <?php echo Html::hiddenInput('depcode', $depcode) ?>
-        เลข 13 หลัก <input name="cid" autocomplete="off" maxlength="13" /> 
-        วดป.เกิด <input name="birthday" type="date" max="<?= date('Y-m-d', strtotime("-30 day")) ?>" autocomplete="off"/>
-        <button class="btn btn-sm btn-success">ทำการจอง</button>
+        <p>เลข 13 หลัก <input name="cid" autocomplete="off" maxlength="13" /></p> 
+        <p>วดป.เกิด <input name="birthday" type="date" max="<?= date('Y-m-d', strtotime("-30 day")) ?>" autocomplete="off"/></p>
+        <p><button class="btn btn-lg btn-success">ทำการจอง</button></p>
 
     </div>
 </div>

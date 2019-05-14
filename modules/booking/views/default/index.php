@@ -21,7 +21,7 @@ $raw = \Yii::$app->db->createCommand($sql)->queryAll();
 
 </style>
 <div class="alert alert-danger">
-    <span style="font-size: 32px">ขั้นตอนที่ 1/3 [เลือกบริการ]</span>
+    <span style="font-size: 22px">ขั้นตอนที่ 1/3 [เลือกบริการ]</span>
 </div>
 <div class="row">
 
