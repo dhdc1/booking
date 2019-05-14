@@ -43,7 +43,7 @@ $pt = \Yii::$app->db->createCommand($sql_pt)->queryScalar();
 
 
     <div style="display: flex;flex-direction: row;justify-content: space-between;">
-        <div style="flex: 1;font-size: 18px;text-align: left">จองเมื่อ <?= $row['d_update'] ?></div> 
+        <div style="flex: 1;font-size: 18px;text-align: left">จองเมื่อ <?= MyHelper::thaiDateTime($row['d_update']) ?></div> 
         <div style="flex: 1;text-align: right">หมายเลขบริการ <?= $vn ?></div>
     </div>
 

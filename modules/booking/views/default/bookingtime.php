@@ -37,7 +37,7 @@ use app\components\MyHelper;
 
 </div>
 
-<h3>แผนก: <?= MyHelper::getDepartName($depcode); ?>  วันที่จอง <?= $init_date ?></h3>
+<h3>แผนก: <?= MyHelper::getDepartName($depcode); ?>  วันที่จอง <?= MyHelper::thaiDate($init_date) ?></h3>
 <?php ActiveForm::begin(); ?>
 <div style="font-size: 22px;text-align: center" >
     <div >
