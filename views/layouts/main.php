@@ -29,7 +29,7 @@ AppAsset::register($this);
             <?php
            
             NavBar::begin([
-                'brandLabel' => '<i class="glyphicon glyphicon-ok"></i> Smart Service ' . \Yii::$app->params['hospname'],
+                'brandLabel' => '<i class="glyphicon glyphicon-ok"></i>' . \Yii::$app->params['hospname'],
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-custom navbar-fixed-top',
@@ -64,7 +64,7 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container-fluid">
-                <p class="pull-left">&copy; SmartBooking Version 1.1.0 (2019-02-28)</p>
+                <p class="pull-left">&copy; SmartBooking Version 1.2.0 (2019-05-14)</p>
 
                 <p class="pull-right">Smart Queue System</p>
             </div>

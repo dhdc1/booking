@@ -83,7 +83,7 @@ class DefaultController extends Controller {
                 }
             } else {
                 //echo "";
-                throw new \yii\web\ForbiddenHttpException('เลขบัตร หรือ วดป.เกิด ไม่ถูกต้อง');
+                throw new \yii\web\ForbiddenHttpException('เลขบัตร หรือ ปีพ.ศ.เกิด ไม่ถูกต้อง');
                 //echo $sql;
             }
         } else {
