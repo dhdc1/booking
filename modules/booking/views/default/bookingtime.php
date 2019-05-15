@@ -72,8 +72,8 @@ use app\components\MyHelper;
     <div >
 
         <?php echo Html::hiddenInput('depcode', $depcode) ?>
-        <p>เลข 13 หลัก <input name="cid" autocomplete="off" maxlength="13" /></p> 
-        <p>ปี พ.ศ.เกิด <input name="byear" type="number"  autocomplete="off"/></p>
+        <p>เลข 13 หลัก <input name="cid" type="number" autocomplete="off" maxlength="13" /></p> 
+        <p>ปี พ.ศ.เกิด <input name="byear" type="number"  autocomplete="off" maxlength="4" /></p>
         <p><button class="btn btn-lg btn-success">ทำการจอง</button></p>
 
     </div>
