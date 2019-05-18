@@ -55,7 +55,7 @@ $pt = \Yii::$app->db->createCommand($sql_pt)->queryScalar();
         <div style="flex: 1.25">ไปที่:<u><?= $depart ?></u> <i class="glyphicon glyphicon-check"></i></div>
         <div style="flex: 1">
 
-            วัน-เวลาที่จองได้<br><?= $row['reserv_date'] ?> เวลา <?= substr($row['reserv_time'], 0, 5) ?> น.
+            วัน-เวลาที่จองได้<br><?= MyHelper::thaiDate($row['reserv_date']) ?> เวลา <?= substr($row['reserv_time'], 0, 5) ?> น.
 
         </div>
     </div>
