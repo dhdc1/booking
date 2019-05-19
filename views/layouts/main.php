@@ -64,9 +64,7 @@ AppAsset::register($this);
 
         <footer class="footer">
             <div class="container-fluid">
-                <p class="pull-left">&copy; SmartBooking Version 1.2.0 (2019-05-14)</p>
-
-                <p class="pull-right">Smart Queue System</p>
+                <p class="pull-right">&copy; SmartQueue Booking  Version 1.3.0 (2019-05-19)</p>
             </div>
         </footer>
 
