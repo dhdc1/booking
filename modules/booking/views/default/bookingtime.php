@@ -31,7 +31,7 @@ use app\components\MyHelper;
     ]);
     ?>
     เลือกวันที่ 
-    <input autocomplete="off"  name='date_book' type="date" value="<?= $init_date ?>" min='<?= date('Y-m-d', strtotime("+1 day")) ?>' max='<?= date('Y-m-d', strtotime($limit_day)) ?>'/> 
+    <input autocomplete="off" id="date_book" name='date_book' type="date" value="<?= $init_date ?>" min='<?= date('Y-m-d', strtotime("+1 day")) ?>' max='<?= date('Y-m-d', strtotime($limit_day)) ?>'/> 
     <button class="btn btn-sm btn-danger"> ตกลง </button>
     <?php ActiveForm::end(); ?>
 
@@ -79,4 +79,12 @@ use app\components\MyHelper;
     </div>
 </div>
 <?php ActiveForm::end(); ?>
+<?php
+$js = <<<JS
+     $('#date_book').change(function(e){
+         $('#search').submit();
+      });   
+JS;
+$this->registerJs($js);
+
 
