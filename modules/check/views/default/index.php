@@ -5,24 +5,26 @@ use yii\widgets\ActiveForm;
 ?>
 
 <style>
-    
-    input{
+
+    .input-chk {
         height: 50px;
-        width: 250px;       
+        width: 250px; 
+        font-size:24px;
+        text-align: center
     }
-    button {
+    .btn-chk {
         height: 50px;
         width: 80px;
     }
-    
+
 </style>
 
 <div style="margin-top: 20px;text-align: center">
     <?php
     ActiveForm::begin();
     ?>
-    <input id="cid" name="cid" autocomplete="off" placeholder="เลข 13 หลัก" maxlength="13" />
-    <button>ค้นหา</button>
+    <p><input id="cid" name="cid" autocomplete="off" placeholder="เลข 13 หลัก" maxlength="13" class="input-chk" /></p>
+    <p><button class="btn-chk">ค้นหา</button></p>
     <?php
     ActiveForm::end();
     ?>
@@ -33,5 +35,4 @@ $js = <<<JS
 JS;
 
 $this->registerJs($js);
-
 ?>

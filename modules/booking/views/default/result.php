@@ -34,63 +34,36 @@ $pt = \Yii::$app->db->createCommand($sql_pt)->queryScalar();
 
 </div>
 
-<div id="slip" style="width: 650px;height: 365px;background-color: wheat;color: black;padding: 5px;border-style: dotted;">
+<div id='slip' style="background-color: wheat;color: black;padding: 5px;border-style: dotted;">
 
-    <div style="display: flex;flex-direction: row;justify-content: flex-end;text-align: center">
-        <div style="flex: 2;font-size: 18px;text-align: left">เอกสารเข้ารับบริการ <u><?= \Yii::$app->params['hospname'] ?></u></div> 
-        <div style="flex: 1;font-size: 18px;text-align: right">Visiting Pass</div>
+
+    <h3>เอกสารเข้ารับบริการ</h3>
+    <h4><u><?= \Yii::$app->params['hospname'] ?></u></h4>
+    <h4>หมายเลขคิว <?= MyHelper::getQueue($vn) ?></h4>     
+    <p>(VN : <?= $vn ?>)</p>       
+    <h4>HN : <?= $hn ?> </h4>
+    <h4><?= $pt ?></h4>
+    <h4>ไปที่แผนก: <u><?= $depart ?></u> <i class="glyphicon glyphicon-check"></i></h4>
+    <p>วันเข้ารับบริการ</p>
+    <h4><?= MyHelper::thaiDate($row['reserv_date']) ?> เวลา <?= substr($row['reserv_time'], 0, 5) ?> น.</h4>
+    <hr style="border-top: dotted 1px;" />
+    <div>
+        <?php
+        $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+        echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($vn, $generator::TYPE_CODE_128)) . '">';
+        ?>
     </div>
+    <hr style="border-top: dotted 1px;" />
 
-
-    <div style="display: flex;flex-direction: row;justify-content: space-between;">
-        <div style="flex: 1;font-size: 18px;text-align: left">จองเมื่อ <?= MyHelper::thaiDateTime($row['d_update']) ?></div> 
-        <div style="flex: 1;text-align: right">หมายเลขบริการ <?= $vn ?></div>
-    </div>
-
-    <div style="display: flex;flex-direction: row;justify-content: space-between;font-size: 22px;background-color: white">
-        <div style="flex: 1">HN : <?= $hn ?></div> <div style="flex: 2"><?= $pt ?></div>
-    </div>
-
-    <div style="display: flex;flex-direction: row;justify-content: space-between;font-size: 24px">
-        <div style="flex: 1.25">ไปที่:<u><?= $depart ?></u> <i class="glyphicon glyphicon-check"></i></div>
-        <div style="flex: 1">
-
-            วัน-เวลาที่จองได้<br><?= MyHelper::thaiDate($row['reserv_date']) ?> เวลา <?= substr($row['reserv_time'], 0, 5) ?> น.
-
-        </div>
-    </div>
-    <div style="display: flex;flex-direction: row;justify-content: space-between">
-        <div style="flex: 1;border-bottom-style:  dotted;border-bottom-width: 1px"></div>
-    </div>
-
-    <div style="display: flex;flex-direction: row;justify-content: space-between;font-size: 22 px">
-        <div style="flex: 1;display: flex;flex-direction: column;text-align: center; justify-content: center">
-            <?php
-            $generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
-            echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode($vn, $generator::TYPE_CODE_128)) . '">';
-            ?>
-        </div>
-        <div style="flex: 2">
-            <div style="display: flex;flex-direction: column">
-                <div style="flex:1;text-align: center">
-                    กรุณาแสดงเอกสารนี้ที่หน้าแผนกที่ท่านทำการจองไว้ควรเดินทางไปถึง<br>โรงพยาบาลก่อนเวลานัดอย่างน้อย 45 นาที
-
-                </div>
-                <div style="flex:1;text-align: center">
-                    <h1>หมายเลข <?= MyHelper::getQueue($vn) ?></h1>
-                    <div>แสดงบัตรประชาชนก่อนเข้ารับบริการทุกครั้ง</div>
-                    <div>ยกเลิกการจองกรุณาโทร <?= \Yii::$app->params['tel_cancel'] ?></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <p>กรุณาแสดงเอกสารนี้ที่หน้าแผนกที่ท่านทำการจองไว้ควรเดินทางไปถึงโรงพยาบาลก่อนเวลานัดอย่างน้อย 45 นาที</p>
+    <div>แสดงบัตรประชาชนก่อนเข้ารับบริการทุกครั้ง</div>
+    <div>ยกเลิกการจองกรุณาโทร <?= \Yii::$app->params['tel_cancel'] ?></div>
+    <div class="pull-right">( จองเมื่อ <?= MyHelper::thaiDateTime($row['d_update']) ?> )</div>
 
 </div>
+
 <br>
 <div>
     <a href="#" onclick="print()" class="btn btn-primary btn-lg">พิมพ์</a>
     <a href="<?= Url::to(['/site/index']) ?>" class="btn btn-success btn-lg">ตกลง</a>
-
 </div>
