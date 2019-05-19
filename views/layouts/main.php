@@ -29,7 +29,7 @@ AppAsset::register($this);
             <?php
            
             NavBar::begin([
-                'brandLabel' => '<i class="glyphicon glyphicon-ok"></i>' . \Yii::$app->params['hospname'],
+                'brandLabel' => '<i class="glyphicon glyphicon-plus"></i> ' . \Yii::$app->params['hospname'],
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-custom navbar-fixed-top',
