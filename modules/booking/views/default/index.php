@@ -16,6 +16,8 @@ $raw = \Yii::$app->db->createCommand($sql)->queryAll();
         text-align: center;        
         cursor: pointer;
         margin: 15px;
+        border-radius: 10px;
+        padding: 10px;
 
     }
 
@@ -26,7 +28,7 @@ $raw = \Yii::$app->db->createCommand($sql)->queryAll();
 <div class="row">
 
     <?php foreach ($raw as $row): ?>
-        <div class="box-x col-md-2" style="  background-color: #db4865;">
+        <div class="box-x col-md-2" style="  background-color: #00796b;">
             <a href="<?= Url::to(['bookingtime', 'depcode' => $row['depcode']]) ?>" >
                 <span style="font-size: 26px;color: white"><?= $row['depname'] ?></span><br>
                 <span style="font-size: 22px;color: white"><?= $row['ename'] ?></span><br>
